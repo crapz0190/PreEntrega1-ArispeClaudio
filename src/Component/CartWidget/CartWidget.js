@@ -1,14 +1,9 @@
-import {Component} from "react";
-import './Styles.css';
+import './CartWidget.css';
 
-class CartWidget extends Component {
-    render() {
-        return ( 
-            <header className="cartWidget">
-                <h3>Carrito<sup>3</sup></h3>
-            </header>
-        )
-    };
+export default function CartWidget() {
+  return(
+    <div className='cartWidget'>
+      <img src='./images/carrito.png' alt='12' />2
+    </div>
+  )
 }
-
-export default CartWidget;
