@@ -1,8 +1,6 @@
-import { useState } from "react"
 import './ItemCount.css'
 
-export default function Counter() {
-  const [counter, setCounter] = useState(0);
+export default function Counter({counter, setCounter}) {
 
   const onAdd = () => {
     setCounter(counter + 1)
@@ -13,7 +11,6 @@ export default function Counter() {
       setCounter(counter - 1)
     }
   };
-
 
     return(
         <div className="counter">
