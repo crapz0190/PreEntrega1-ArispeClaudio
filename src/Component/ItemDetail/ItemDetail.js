@@ -10,7 +10,7 @@ export default function ItemDatail({detail}) {
 
   const {addItem} = useContext(CartContext);
 
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
 
   // const addToCart = (event) => {
   //   event.preventDefault();

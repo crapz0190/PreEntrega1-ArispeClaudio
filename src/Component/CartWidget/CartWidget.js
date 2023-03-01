@@ -1,14 +1,22 @@
 import './CartWidget.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 export default function CartWidget() {
   const {cart} = useContext(CartContext);
+  const [total, setTotal] = useState(0);
   console.log(cart);
 
+  useEffect(() => {
+    setTotal(cart.reduce((previousValue, currentValue) => previousValue + currentValue.quantity, 0))
+  }, [cart])
+
   return(
-    <div className='cartWidget'>
-      <img src='/images/carrito.png' alt='12' />{cart?.length}
-    </div>
+    <Link to={'/cart'}>
+      <div className='cartWidget'>
+        <img src='/images/carrito.png' alt='12' />{total}
+      </div>
+    </Link>
   )
-}
+};
