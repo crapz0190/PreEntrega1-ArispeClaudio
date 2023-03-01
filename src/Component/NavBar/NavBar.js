@@ -16,7 +16,7 @@ export default function NavBar() {
         </ul>
       </nav>
       <div>
-        <CartWidget />
+        <CartWidget  />
       </div>
       <div className="toggle"></div>
     </header>
