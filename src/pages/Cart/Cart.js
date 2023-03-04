@@ -1,9 +1,11 @@
 import './Cart.css'
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
     const { cart, clear, removeItem } = useContext(CartContext);
+    const navigate = useNavigate();
     return (
       <div>
         {
@@ -17,6 +19,12 @@ export default function Cart() {
         }
         {
           cart.length > 0 && <button onClick={clear}>Vaciar Carrito</button>
+        }
+        {
+          cart.length === 0 && <div>
+            <h2>No hay produtos en el carrito</h2>
+            <button onClick={() => navigate('/')}>Seguir comprando</button>
+          </div>
         }
       </div>
       );
