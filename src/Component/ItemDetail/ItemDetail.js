@@ -21,14 +21,14 @@ export default function ItemDatail({detail}) {
 
   return (
     <div className='itemDetail'>
-      <img alt={detail.name} src={detail.image} />
-      <h2>{detail.name}</h2>
+      <img alt={detail.title} src={`/images/${detail.images}`} />
+      <h2>{detail.title}</h2>
       <h2>{detail.description}</h2>
       <h2>{detail.price}</h2>
       <Counter counter={counter} setCounter={setCounter} />
-      <button className='addCart' onClick={() => navigate('/')} >Seguir Comprando</button>
-      <button className='addCart' onClick={() => addItem(detail, counter)} >Agregar Al Carrito</button>
-      <button className='addCart' onClick={() => navigate('/cart')} >Completar Mi Compra</button>
+      <button className='addCart' onClick={() => navigate('/')} variant='primary' >Seguir Comprando</button>
+      <button className='addCart' disabled={counter > detail.stock} onClick={() => addItem(detail, counter)} variant='primary' >Agregar Al Carrito</button>
+      <button className='addCart' onClick={() => navigate('/cart')} variant='primary' >Completar Mi Compra</button>
     </div>
   )
 }

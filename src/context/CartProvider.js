@@ -22,12 +22,12 @@ export default function CartProvider ({children}) {
     } else {
       const product = {
         id: item.id,
-        name: item.name,
+        title: item.title,
         description: item.description,
         price: item.price,
         quantity: quantity,
         category: item.category,
-        image: item.image,
+        images: item.images,
         stock: item.stock,
       };
       setCart([...cart, product]);
