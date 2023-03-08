@@ -9,7 +9,7 @@ export default function NavBar() {
       <nav>
         <ul>
           <li><NavLink className={({ isActive }) => isActive ? 'active' : 'inactive' } to="/">Home</NavLink></li>
-          <li><NavLink className={({ isActive }) => isActive ? 'active' : 'inactive' } to="/category/sueters">Sueters</NavLink></li>
+          <li><NavLink className={({ isActive }) => isActive ? 'active' : 'inactive' } to="/category/sueter">Sueters</NavLink></li>
           <li><NavLink className={({ isActive }) => isActive ? 'active' : 'inactive' } to="/category/abrigos">Abrigos</NavLink></li>
           <li><NavLink className={({ isActive }) => isActive ? 'active' : 'inactive' } to="/category/jeans">Jeans</NavLink></li>
           <li><NavLink className={({ isActive }) => isActive ? 'active' : 'inactive' } to="/category/calzados">Calzados</NavLink></li>
