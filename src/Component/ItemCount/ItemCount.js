@@ -14,11 +14,11 @@ export default function Counter({counter, setCounter}) {
 
     return(
         <div className="counter">
-            <h2>{counter}</h2>
-            <div className="containerButton">
-                <button className="buttonCounter" onClick={substract}>-</button>
-                <button className="buttonCounter" onClick={onAdd}>+</button>
-            </div>
+          <div className="containerButton">
+              <button disabled={counter === 0} className="buttonCounter" onClick={substract}>-</button>
+              <div><span>{counter}</span></div>
+              <button disabled={counter === 0} className="buttonCounter" onClick={onAdd}>+</button>
+          </div>
         </div>
     )
 }

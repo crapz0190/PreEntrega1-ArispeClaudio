@@ -1,6 +1,6 @@
 import './ItemDetail.css';
 import Counter from '../ItemCount/ItemCount';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
@@ -10,7 +10,11 @@ export default function ItemDatail({detail}) {
 
   const {addItem} = useContext(CartContext);
 
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    setCounter(detail?.stock === 0 ? 0 : 1 )
+  }, [detail])
 
   // const addToCart = (event) => {
   //   event.preventDefault();
