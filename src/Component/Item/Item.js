@@ -1,13 +1,21 @@
 import './Item.css'
 
+// eslint-disable-next-line
 export default function({product}) {
   console.log(product.images)
   return (
     <div className='item'>
-      <img alt={product.title} src={`/images/${product.images}`} />
-      <h2>{product.title}</h2>
-      <h2>{product.description}</h2>
-      <h2>${product.price}</h2>
+      <figure>
+        <img alt={product.title} src={`/images/${product.images}`} />
+      </figure>
+      <div className='displayText'>
+        <h2>${product.price}</h2>
+        <span>Envío gratis</span>
+      </div>
+      <div className='textContainer'>
+        <h3 className='productTitle'>{product.title}</h3>
+        <p className='description'>{product.description}</p>
+      </div>
     </div>
   );
 }

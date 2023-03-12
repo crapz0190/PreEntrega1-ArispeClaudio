@@ -25,14 +25,33 @@ export default function ItemDatail({detail}) {
 
   return (
     <div className='itemDetail'>
-      <img alt={detail.title} src={`/images/${detail.images}`} />
-      <h2>{detail.title}</h2>
-      <h2>{detail.description}</h2>
-      <h2>{detail.price}</h2>
-      <Counter counter={counter} setCounter={setCounter} />
-      <button className='addCart' onClick={() => navigate('/')} variant='primary' >Seguir Comprando</button>
-      <button className='addCart' disabled={counter > detail.stock} onClick={() => addItem(detail, counter)} variant='primary' >Agregar Al Carrito</button>
-      <button className='addCart' onClick={() => navigate('/cart')} variant='primary' >Completar Mi Compra</button>
+      
+      <div className="flexContainer1">
+        <ul className="thum">
+          <li><img alt={detail.title} src={`/images/${detail.images}`} /></li>
+          <li><img alt={detail.title} src={`/images/${detail.images}`} /></li>
+          <li><img alt={detail.title} src={`/images/${detail.images}`} /></li>
+          <li><img alt={detail.title} src={`/images/${detail.images}`} /></li>
+          <li><img alt={detail.title} src={`/images/${detail.images}`} /></li>
+          <li><img alt={detail.title} src={`/images/${detail.images}`} /></li>
+        </ul>
+        <div className="imgBox">
+          <img alt={detail.title} src={`/images/${detail.images}`} />
+        </div>
+      </div>
+      <div className='flexContainer2'>
+        <div className='productDetail'>
+          <h2>{detail.title}</h2>
+          <p>{detail.description}</p>
+          <h3>{detail.price}</h3>
+        </div>
+        <div className='cartButtons'>
+          <Counter counter={counter} setCounter={setCounter} />
+          <button className='addCart' onClick={() => navigate('/')} variant='primary' >Seguir Comprando</button>
+          <button className='addCart' disabled={counter > detail.stock} onClick={() => addItem(detail, counter)} variant='primary' >Agregar Al Carrito</button>
+          <button className='addCart' onClick={() => navigate('/cart')} variant='primary' >Completar Mi Compra</button>
+        </div>
+      </div>
     </div>
   )
 }

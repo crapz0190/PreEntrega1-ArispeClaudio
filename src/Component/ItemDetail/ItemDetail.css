@@ -1,33 +1,106 @@
 .itemDetail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 50px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+  outline: 2px solid greenyellow;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
 }
 
-.itemDetail h2 {
-    margin-bottom: 30px;
+.flexContainer1{  
+  outline: 2px solid yellow;
+  position: relative;
+  width: 50%;
+  height: 100vh;
 }
 
-.addCart {
-    width: 100%;
-    height: 40px;
-    font-size: 1em;
-    font-weight: bold;
-    color: #f2f2f2;
-    letter-spacing: 1px;
-    background-color: rgba(11, 129, 247, 0.568);
-    border-radius: 5px;
-    margin-top: 30px;
+.flexContainer1 .thum {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-.addCart:hover {
+.flexContainer1 .thum li {
+  width: 60px;
+  height: 60px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.flexContainer1 .thum li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 1px solid #d3cece;
+  cursor: pointer;
+}
+
+.flexContainer1 .thum li img:hover {
+  border: 2px solid rgb(37, 167, 211);
+}
+
+.flexContainer1 .imgBox {
+  outline: 2px solid orangered;
+  position: absolute;
+  right: 0;
+  padding: 60px 40px;
+  width: 80%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.flexContainer1 .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.25s;
+}
+
+.flexContainer2{
+  outline: 1px solid rgb(255, 0, 247);
+  width: 40%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.productDetail{
+  text-align: center;
+}
+
+.cartButtons{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartButtons .addCart {
+  width: 100%;
+  height: 50px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #f2f2f2;
+  letter-spacing: 1px;
+  background-color: rgba(11, 129, 247, 0.568);
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.cartButtons .addCart:hover {
     background-color: antiquewhite;
     color: rgb(220, 143, 71);
     cursor: pointer;
