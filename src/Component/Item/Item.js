@@ -2,7 +2,6 @@ import './Item.css'
 
 // eslint-disable-next-line
 export default function({product}) {
-  console.log(product.images)
   return (
     <div className='item'>
       <figure>

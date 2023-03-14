@@ -3,13 +3,11 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc, getFirestore, doc, updateDoc } from 'firebase/firestore';
-import Counter from '../../Component/ItemCount/ItemCount';
 import ItemCart from './ItemCart';
 
 export default function Cart() {
   const { cart, clear, removeItem, total } = useContext(CartContext);
   const navigate = useNavigate();
-  // const db = getFirestore();
 
   const createOrder = (event) => {
     event.preventDefault();

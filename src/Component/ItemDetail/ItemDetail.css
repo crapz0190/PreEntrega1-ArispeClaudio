@@ -1,5 +1,12 @@
 .itemDetail {
-  outline: 2px solid greenyellow;
+  width: 100%;
+  height: 200vh;
+  background-color: #f0f0f0;
+  padding: 0.1px;
+  color: #000000E6;
+}
+
+.elementContainer{
   width: 90%;
   display: flex;
   justify-content: center;
@@ -7,12 +14,13 @@
   margin: 0 auto;
   margin-top: 20px;
   padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .flexContainer1{  
-  outline: 2px solid yellow;
   position: relative;
-  width: 50%;
+  width: 70%;
   height: 100vh;
 }
 
@@ -43,15 +51,14 @@
 }
 
 .flexContainer1 .thum li img:hover {
-  border: 2px solid rgb(37, 167, 211);
+  border: 2px solid #25a7d3;
 }
 
 .flexContainer1 .imgBox {
-  outline: 2px solid orangered;
   position: absolute;
   right: 0;
   padding: 60px 40px;
-  width: 80%;
+  width: 90%;
   height: 100%;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
@@ -68,41 +75,114 @@
 }
 
 .flexContainer2{
-  outline: 1px solid rgb(255, 0, 247);
-  width: 40%;
+  width: 30%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  box-shadow: 0 15px 25px rgba(82, 82, 82, 0.714);
+  backdrop-filter: blur(4px);
+  border: 1px solid #b6b5b58c;
+  border-radius: 5px;
 }
 
 .productDetail{
-  text-align: center;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.productDetail .plusProd{
+  font-size: 0.875em;
+  text-align: left;
+  background-color: #f0f0f000;
+  color: rgb(10, 133, 227);
+  cursor: pointer;
+}
+
+.productDetail span{
+  font-size: 0.875em;
+  color: #0000008C;
+}
+
+.productDetail h2{
+  font-size: 1.375em;
+}
+
+.productDetail img{
+  width: 100px;
+}
+
+.productDetail h3{
+  font-size: 2.25em;
+}
+
+.productDetail .topNum{
+  font-size: 0.5em;
 }
 
 .cartButtons{
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cartButtons .prodStock{
+  width: 100%;
+}
+
+.cartButtons .prodStock span{
+  color: #0000008C;
+  font-size: 0.875em;
+  font-weight: 300;
+}
+
+.cartButtons .prodStock .contentEditable{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.cartButtons .prodStock .contentEditable h5{
+  font-size: 1em;
 }
 
 .cartButtons .addCart {
   width: 100%;
   height: 50px;
   font-size: 1em;
-  font-weight: bold;
   color: #f2f2f2;
   letter-spacing: 1px;
-  background-color: rgba(11, 129, 247, 0.568);
+  background-color: #3483FA;
   border-radius: 5px;
   margin-top: 5px;
 }
 
 .cartButtons .addCart:hover {
-    background-color: antiquewhite;
-    color: rgb(220, 143, 71);
+    background-color: #0453ca;
+    color: #f2f2f2;
     cursor: pointer;
     transition: 0.5s;
+}
+
+.flexContainer2 .logoProtec{
+  width: 25px;
+}
+
+.flexContainer2 .flexEditable{
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.flexContainer2 .flexEditable h6{
+  font-size: 0.875em;
+  font-weight: 300;
 }

@@ -16,7 +16,7 @@ export default function Counter({counter, setCounter}) {
         <div className="counter">
           <div className="containerButton">
               <button disabled={counter === 0} className="buttonCounter" onClick={substract}>-</button>
-              <div><span>{counter}</span></div>
+              <div><span className='colorCount'>{counter}</span></div>
               <button disabled={counter === 0} className="buttonCounter" onClick={onAdd}>+</button>
           </div>
         </div>
