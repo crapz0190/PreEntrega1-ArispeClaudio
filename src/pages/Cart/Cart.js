@@ -26,6 +26,7 @@ export default function Cart() {
           price: product.price,
           id: product.id,
           quantity: product.quantity,
+          images: product.images,
         }
       }),
       total: cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0),
@@ -53,21 +54,23 @@ export default function Cart() {
   };
 
   return (
-    <div>
-      {cart.map((product) => (
-          <div className="cartDetail" key={product.title}>
-            <ItemCart product={product} />          
-            <button onClick={() => removeItem(product.id)}>x</button>
-          </div>
-        ))}
-      {cart.length > 0 && <button onClick={clear}>Vaciar Carrito</button>}
-      {cart.length > 0 && 
-        (<div>
-          <button onClick={() => navigate('/')}>Seguir comprando</button>
-          <button onClick={createOrder}>Completar compra</button>
-          <span>El total es: ${total}</span>
-        </div>)}
-      {cart.length === 0 && <h2>No hay produtos en el carrito</h2>}
+    <div className='bg'>
+      <div className='containerCart'>
+        {cart.map((product) => (
+            <div className="cartDetail" key={product.title}>
+              <ItemCart product={product} />          
+              <button onClick={() => removeItem(product.id)}>x</button>
+            </div>
+          ))}
+        {cart.length > 0 && <button className='btnCart' onClick={clear}>Vaciar Carrito</button>}
+        {cart.length > 0 && 
+          (<div className='btnNav'>
+            <button onClick={() => navigate('/')}>Seguir comprando</button>
+            <button onClick={createOrder}>Completar compra</button>
+            <span>El total es: ${total}</span>
+          </div>)}
+        {cart.length === 0 && <h2>No hay produtos en el carrito</h2>}
+      </div>
     </div>
   );
 };

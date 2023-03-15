@@ -1,6 +1,46 @@
+/* CSS Component ItemCart */
+.cartDn{
+    outline: 1px solid slateblue;
+}
+
+.cartDn img{
+    width: 30px;
+}
+
+
+
+
+
+/* CSS Component Cart */
+.bg{
+    height: 100%;
+    padding: 0.1px;
+    background-color: #f0f0f0;
+}
+
+.containerCart{
+    /* outline: 2px solid greenyellow; */
+    width: 1184px;
+    background-color: #fff;
+    margin: 30px auto;
+    border-radius: 5px;
+    border: 1px solid #22222241;
+    box-shadow: 0 5px 20px #0000006d;
+    padding: 20px;
+}
+
 .cartDetail{
-    width: 600px;
+    outline: 2px solid greenyellow;
+    /* width: 600px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.btnCart{
+    outline: 2px solid rgb(255, 127, 47);
+}
+
+.btnNav{
+    outline: 2px solid rgb(255, 47, 255);
 }

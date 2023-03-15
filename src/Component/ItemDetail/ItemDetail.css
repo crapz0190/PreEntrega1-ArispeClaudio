@@ -1,13 +1,12 @@
 .itemDetail {
   width: 100%;
-  height: 200vh;
   background-color: #f0f0f0;
   padding: 0.1px;
   color: #000000E6;
 }
 
 .elementContainer{
-  width: 90%;
+  width: 1184px;
   display: flex;
   justify-content: center;
   align-items: center;
