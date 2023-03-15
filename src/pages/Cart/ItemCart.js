@@ -16,9 +16,10 @@ export default function ItemCart({product}) {
     <div className='cartDn'>
       <h2>{product.title}</h2>
       <img src={`/images/${product.images}`} />
-      <h3>${product.price}</h3>
+      <h3>$ {product.price}</h3>
       <h4>{product.quantity}</h4>
       <Counter counter={quantity} setCounter={setQuantity} />
+      <span className='subtotal'>$ {product.quantity * product.price}</span>
     </div>
   )
 }

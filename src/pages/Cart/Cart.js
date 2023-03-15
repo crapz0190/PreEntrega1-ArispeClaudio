@@ -59,15 +59,16 @@ export default function Cart() {
         {cart.map((product) => (
             <div className="cartDetail" key={product.title}>
               <ItemCart product={product} />          
-              <button onClick={() => removeItem(product.id)}>x</button>
+              <button className='remove' onClick={() => removeItem(product.id)}>x</button>
             </div>
           ))}
-        {cart.length > 0 && <button className='btnCart' onClick={clear}>Vaciar Carrito</button>}
+        {/* {cart.length > 0 && <button className='btnCart' onClick={clear}>Vaciar Carrito</button>} */}
         {cart.length > 0 && 
           (<div className='btnNav'>
+            {cart.length > 0 && <button className='btnCart' onClick={clear}>Vaciar Carrito</button>}
             <button onClick={() => navigate('/')}>Seguir comprando</button>
             <button onClick={createOrder}>Completar compra</button>
-            <span>El total es: ${total}</span>
+            <span>El total es: $ {total}</span>
           </div>)}
         {cart.length === 0 && <h2>No hay produtos en el carrito</h2>}
       </div>
