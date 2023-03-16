@@ -1,5 +1,5 @@
 import './Cart.css'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc, getFirestore, doc, updateDoc } from 'firebase/firestore';
@@ -8,6 +8,12 @@ import ItemCart from './ItemCart';
 export default function Cart() {
   const { cart, clear, removeItem, total } = useContext(CartContext);
   const navigate = useNavigate();
+  const [formValue, setFormValue] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    location: '',
+  });
 
   const createOrder = (event) => {
     event.preventDefault();
@@ -16,9 +22,10 @@ export default function Cart() {
     
     addDoc(querySnapshot, {
       buyer: {
-        email: 'email1@test.com',
-        name: 'Claudio',
-        phone: '1134234567',
+        name: formValue.name,
+        phone: formValue.phone,
+        email: formValue.email,
+        location: formValue.location,
       },
       products: cart.map((product) => {
         return {
@@ -53,6 +60,13 @@ export default function Cart() {
     });
   };
 
+  const handleInput = (event) => {
+    setFormValue({
+      ...formValue, 
+      [event.target.name]: event.target.value,
+    });
+  }
+
   return (
     <div className='bg'>
       <div className='containerCart'>
@@ -62,15 +76,31 @@ export default function Cart() {
               <button className='remove' onClick={() => removeItem(product.id)}>x</button>
             </div>
           ))}
-        {/* {cart.length > 0 && <button className='btnCart' onClick={clear}>Vaciar Carrito</button>} */}
         {cart.length > 0 && 
           (<div className='btnNav'>
-            {cart.length > 0 && <button className='btnCart' onClick={clear}>Vaciar Carrito</button>}
-            <button onClick={() => navigate('/')}>Seguir comprando</button>
-            <button onClick={createOrder}>Completar compra</button>
-            <span>El total es: $ {total}</span>
+            {cart.length > 0 && <button onClick={clear}>Eliminar</button>}
+            <button onClick={() => navigate('/')}>Más productos del vendedor</button>
           </div>)}
+          <span className='pay'>Total a pagar: $ {total}</span>
         {cart.length === 0 && <h2>No hay produtos en el carrito</h2>}
+      </div>
+      <div className='form'>
+        <h3>Completa el formulario con tus datos para finalizar la compra</h3>
+        <form className='fmFlex'>
+          <fieldset className='itemFlex'>
+            <label for='name'>Nombre y Apellido</label>
+            <input name='name' value={formValue.name} id='name' type='text' placeholder='ej: Alejandro Torres' onChange={handleInput} />
+            <label for='email'>Email</label>
+            <input name='email' value={formValue.email} id='email' type='email' placeholder='ej: test@gmail.com' onChange={handleInput} />
+          </fieldset>
+          <fieldset className='itemFlex'>
+            <label for='phone'>Telefono</label>
+            <input name='phone' value={formValue.phone} id='phone' type='text' placeholder='1134094523' onChange={handleInput} />
+            <label for='location'>Domicilio</label>
+            <input name='location' value={formValue.location} id='location' type='text' placeholder='ej: Av. Julio Roca 1600' onChange={handleInput} />
+          </fieldset>
+        </form>
+          <button onClick={createOrder}>Completar compra</button>
       </div>
     </div>
   );
